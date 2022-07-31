@@ -10,6 +10,7 @@ public class Addressbook {
 			Operation  Operation1 = new Operation();
 			Operation1.addDetails();
 			Operation1.edit();
+			Operation1.delete();
 		}
 
 }

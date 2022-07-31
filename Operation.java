@@ -33,7 +33,7 @@ public class Operation {
 	        System.out.println(contactDetails);
 	    }
 
-	    
+	   
 	    public void edit() {
 			 System.out.println("Enter the First and Last name of a Person to be edit ");
 			 String fname = scanner.next();
@@ -68,7 +68,16 @@ public class Operation {
 			    	System.out.println("Edit Phone :");
 			    	String phoneno = scanner.next();
 			    	con.setPhoneNumber(phoneno);
-			    	
-			 }
+			 }		    	
+		 }
+			
+				public void delete() {
+					System.out.println("Delete the Person");
+					String fname = scanner.next();
+					System.out.println(fname+"");
+					if (fname.equals(con.getFirstName())) {
+							contactDetails.remove(con);
+							System.out.println("contact is Deleted from the Address Book");
+						}
 	}
-}
+	    }
