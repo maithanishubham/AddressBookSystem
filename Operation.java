@@ -1,11 +1,12 @@
 package AddressBook;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Iterator;
+import java.util.Iterator;
 import java.util.Scanner;
-
 public class Operation {
-		
+	
 	Scanner sc = new Scanner(System.in);
     ArrayList<ContactDetails> contactlist = new ArrayList<>();
    
@@ -40,8 +41,10 @@ public class Operation {
     	String phoneno = sc.next();
     	//contact.setPhoneNo(phoneno);
     	
-    	
-    	ContactDetails contact = new ContactDetails(fName, lName, address, city, state, zip, phoneno, phoneno);
+    	System.out.println("Enter Email Id :");
+    	String email = sc.next();
+    	//contact.setEmail(email);
+    	ContactDetails contact = new ContactDetails(fName, lName, address, city, state, zip, phoneno, email);
     	
     	this.contactlist.add(contact);
     	
@@ -92,7 +95,7 @@ public class Operation {
 		int index = this.indexOfPerson();
 		if(index != -1) {
 			System.out.print("Enter the field name want to update\n 1. FirstName \n 2. LastName "
-					+ "\n 3. Address \n 4. City \n 5. State \n 6. Zip \n 7. PhoneNumber");
+					+ "\n 3. Address \n 4. City \n 5. State \n 6. Zip \n 7. PhoneNumber \n 8. Email");
 			int option = sc.nextInt();
 			switch(option) {
 			
@@ -124,7 +127,9 @@ public class Operation {
                        this.contactlist.get(index).setPhoneNo(sc.next());
                        break;
 			   
-			  
+			   case 8 :System.out.println("Update the Email");
+                       this.contactlist.get(index).setEmail(sc.next());
+                       break;
                       
 			   default: System.out.println("Please enter correct Field");        
 			   
@@ -135,5 +140,5 @@ public class Operation {
 			 System.out.println("Person does not exist");
 		 }
 	 }	
- }
-	    
+ 
+}
